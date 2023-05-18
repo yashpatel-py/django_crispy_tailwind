@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %}Register User{% endblock title %}
+
+{% block content %}
+
+<div class="container mx-auto">
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+    </form>
+</div>
+{% endblock content %}
